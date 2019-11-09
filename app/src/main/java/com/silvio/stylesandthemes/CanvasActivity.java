@@ -41,6 +41,19 @@ public class CanvasActivity extends View {
         invalidate();
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            this.x = event.getX();
+            this.y = event.getY();
+            if(pulseAnimatorSet != null && pulseAnimatorSet.isRunning()) {
+                pulseAnimatorSet.cancel();
+            }
+            pulseAnimatorSet.start();
+        }
+        return super.onTouchEvent(event);
+    }
+
 
 
 }
