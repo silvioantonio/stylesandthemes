@@ -54,6 +54,29 @@ public class CanvasActivity extends View {
         return super.onTouchEvent(event);
     }
 
+    @Override
+    public void onSizeChanged(int w, int h, int oldw, int oldh) {
+
+        ObjectAnimator growAnimator = ObjectAnimator.ofFloat(this, "radius", 0, getWidth());
+        growAnimator.setDuration(ANIMATION_DURATION);
+        growAnimator.setInterpolator(new LinearInterpolator());
+
+        ObjectAnimator shrinkAnimator = ObjectAnimator.ofFloat(this,"radius", getWidth(), 0);
+        shrinkAnimator.setDuration(ANIMATION_DURATION);
+        shrinkAnimator.setInterpolator(new LinearOutSlowInInterpolator());
+        shrinkAnimator.setStartDelay(ANIMATION_DELAY);
+
+        ObjectAnimator repeatAnimator = ObjectAnimator.ofFloat(this, "radius", 0, getWidth());
+        repeatAnimator.setStartDelay(ANIMATION_DELAY);
+        repeatAnimator.setDuration(ANIMATION_DURATION);
+        repeatAnimator.setRepeatCount(1);
+        repeatAnimator.setRepeatMode(ValueAnimator.REVERSE);
+
+        pulseAnimatorSet.play(growAnimator).before(shrinkAnimator);
+        pulseAnimatorSet.play(repeatAnimator).after(shrinkAnimator);
+
+    }
+
 
 
 }
