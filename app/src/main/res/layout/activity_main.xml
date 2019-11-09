@@ -26,6 +26,7 @@
         style="@style/TextViewStyle"/>
 
     <Button
+        android:id="@+id/btn"
         style="@style/ButtonStyle"
         android:text="@string/botao" />
 
