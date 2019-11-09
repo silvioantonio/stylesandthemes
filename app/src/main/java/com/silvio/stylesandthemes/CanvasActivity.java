@@ -37,7 +37,7 @@ public class CanvasActivity extends View {
 
     public void setRadius(float radius) {
         this.radius = radius;
-        this.mPaint.setColor(Color.GREEN + (int) radius / COLOR_ADJUSTER);
+        this.mPaint.setColor(Color.parseColor("#5f9ea0") + (int) radius / COLOR_ADJUSTER);
         invalidate();
     }
 

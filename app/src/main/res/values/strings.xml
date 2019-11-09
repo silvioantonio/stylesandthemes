@@ -3,6 +3,6 @@
     <string name="titulo1"><big><u>Bem vindo</u>!</big></string>
     <string name="titulo2"><big><u>Welcome</u>!</big></string>
     <string name="autor1"><b><i>Autor</i></b>: <u>Silvio Junior</u></string>
-    <string name="autor2"><b><i>Sobre</i></b>: Just a guy trying doing dumb things!</string>
+    <string name="autor2"><b><i>Sobre</i></b>: Just a guy trying not doing dumb things!</string>
     <string name="botao">Entrar</string>
 </resources>
